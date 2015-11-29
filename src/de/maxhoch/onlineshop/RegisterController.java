@@ -53,6 +53,7 @@ public class RegisterController implements Serializable {
 	public String persist()
 	{
 		try {
+			customer.setAddress("Example");
 			ut.begin();
 			em.persist(customer);
 			try {
