@@ -1,6 +1,8 @@
 package de.maxhoch.onlineshop;
 
 import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.annotation.Resource;
 import javax.enterprise.context.RequestScoped;
@@ -69,11 +71,19 @@ public class RegisterController implements Serializable {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
+			Logger.getLogger(RegisterController.class.getCanonicalName())
+			.log(Level.INFO, "Speicherung: "+customer);
+			
 		} catch (NotSupportedException e) {
 			// TODO Auto-generated catch block
+			Logger.getLogger(RegisterController.class.getCanonicalName())
+			.log(Level.WARNING, "Speicherungsfehler: "+e.getMessage());
 			e.printStackTrace();
 		} catch (SystemException e) {
 			// TODO Auto-generated catch block
+			Logger.getLogger(RegisterController.class.getCanonicalName())
+			.log(Level.WARNING, "Speicherungsfehler: "+e.getMessage());
 			e.printStackTrace();
 		}
 		
