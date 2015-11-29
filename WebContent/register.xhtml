@@ -28,15 +28,20 @@
 </nav>
 </header>
 
-<h:form>
-<h:panelGrid columns="2" >
-
+<h:form id="registerForm" prependId="false">
+<h:messages for="registerForm"></h:messages>
+<h:panelGrid columns="3" >
 	<h:outputLabel value="#{msg['email']}:"></h:outputLabel>
-	<h:inputText value="#{registerController.customer.email}"></h:inputText>
+	<h:inputText id="email" value="#{registerController.customer.email}"></h:inputText>
+	<h:message for="email"/>
+	
 	<h:outputLabel value="#{msg['kennwort']}:"></h:outputLabel>
-	<h:inputSecret value="#{registerController.customer.password}"></h:inputSecret> 
-	<h:commandButton action="#{registerController.persist}" value="#{msg['register']}"></h:commandButton>
-	<h:commandButton action="index" value="#{msg['cancel']}"></h:commandButton>
+	<h:inputSecret id="password" value="#{registerController.customer.password}"></h:inputSecret> 
+	<h:message  for="password"/>
+	
+	<h:commandButton id="register" action="#{registerController.persist}" value="#{msg['register']}"></h:commandButton>
+	<h:commandButton id="cancel" action="index" value="#{msg['cancel']}"></h:commandButton>
+	<h:message for="register"/>
 	
 </h:panelGrid>
 </h:form>

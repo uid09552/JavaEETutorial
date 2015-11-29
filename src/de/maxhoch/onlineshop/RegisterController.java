@@ -6,6 +6,8 @@ import java.util.logging.Logger;
 
 import javax.annotation.Resource;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
@@ -74,6 +76,13 @@ public class RegisterController implements Serializable {
 			
 			Logger.getLogger(RegisterController.class.getCanonicalName())
 			.log(Level.INFO, "Speicherung: "+customer);
+			
+			//Show messages
+			FacesMessage m=new FacesMessage("Succesfully registered "+customer.getEmail());
+			
+			FacesContext.getCurrentInstance()
+			.addMessage("registerForm", m);
+			
 			
 		} catch (NotSupportedException e) {
 			// TODO Auto-generated catch block
