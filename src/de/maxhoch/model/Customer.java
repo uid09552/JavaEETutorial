@@ -12,14 +12,14 @@ import java.util.List;
  * The persistent class for the customer database table.
  * 
  */
-@Entity
-@Table(schema="public", name="customer")
-@NamedQuery(name="Customer.findAll", query="SELECT c FROM Customer c")
+@Entity(name="customer")
+@Table(name="customer")
+@NamedQuery(name="Customer.findAll", query="SELECT c FROM customer c")
 public class Customer implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="CUSTOMER_ID_GENERATOR", sequenceName="SEQ_CUSTOMER", schema="public", allocationSize=1, initialValue=1)
+	@SequenceGenerator(name="CUSTOMER_ID_GENERATOR", sequenceName="SEQ_CUSTOMER", allocationSize=1, initialValue=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CUSTOMER_ID_GENERATOR")
 	private Long id;
 

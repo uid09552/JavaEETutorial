@@ -34,15 +34,15 @@ public class RegisterController implements Serializable {
 	
 	
 	@Inject
-	private Customer customer;
+	private de.maxhoch.model.Customer customer;
 
 
-	public Customer getCustomer() {
+	public de.maxhoch.model.Customer getCustomer() {
 		return customer;
 	}
 
 
-	public void setCustomer(Customer customer) {
+	public void setCustomer(de.maxhoch.model.Customer customer) {
 		this.customer = customer;
 	}
 	
