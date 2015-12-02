@@ -1,55 +1,28 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition template="/template.xhtml"
+ xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"> 
-
-<h:head>
-<f:loadBundle basename="resources.messages" var="msg"></f:loadBundle>
-<title>
-<h:outputText value="#{msg['title']}"></h:outputText>
-</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
-<h:outputStylesheet library="css" name="styles.css"></h:outputStylesheet>
-<h:outputLink library="img"></h:outputLink>
-</h:head> 
-<h:body> 
-<header>
-<hgroup>
-	<h1><h:outputText value="#{msg['title']}"></h:outputText></h1>
-</hgroup>
-<nav>
-<h:link outcome="index" value="#{msg['home']}">
-
-</h:link>
-<h:link outcome="register" value="#{msg['register']}">
-
-</h:link>
-</nav>
-</header>
-
-<h:form id="registerForm" prependId="false">
-<h:messages for="registerForm"></h:messages>
-<h:panelGrid columns="3" >
-	<h:outputLabel value="#{msg['email']}:"></h:outputLabel>
-	<h:inputText id="email" value="#{registerController.customer.email}"></h:inputText>
-	<h:message for="email"/>
+	<ui:define name="content">
 	
-	<h:outputLabel value="#{msg['kennwort']}:"></h:outputLabel>
-	<h:inputSecret id="password" value="#{registerController.customer.password}"></h:inputSecret> 
-	<h:message  for="password"/>
-	
-	<h:commandButton id="register" action="#{registerController.persist}" value="#{msg['register']}"></h:commandButton>
-	<h:commandButton id="cancel" action="index" value="#{msg['cancel']}"></h:commandButton>
-	<h:message for="register"/>
-	
-</h:panelGrid>
-</h:form>
-
-<footer>
-<h:outputText value="#{msg.copyright}"></h:outputText>
-</footer>
-</h:body> 
-</html>
+		<h:form id="registerForm" prependId="false">
+		<h:messages for="registerForm"></h:messages>
+		<h:panelGrid columns="3" >
+			<h:outputLabel value="#{msg['email']}:"></h:outputLabel>
+			<h:inputText id="email" value="#{registerController.customer.email}"></h:inputText>
+			<h:message for="email"/>
+			
+			<h:outputLabel value="#{msg['kennwort']}:"></h:outputLabel>
+			<h:inputSecret id="password" value="#{registerController.customer.password}"></h:inputSecret> 
+			<h:message  for="password"/>
+			
+			<h:commandButton id="register" action="#{registerController.persist}" value="#{msg['register']}"></h:commandButton>
+			<h:commandButton id="cancel" action="index" value="#{msg['cancel']}"></h:commandButton>
+			<h:message for="register"/>
+			
+		</h:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>
 
 

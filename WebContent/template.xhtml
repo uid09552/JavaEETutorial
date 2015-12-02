@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+<f:loadBundle basename="resources.messages" var="msg"></f:loadBundle>
+<title>
+<h:outputText value="#{msg['title']}"></h:outputText>
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<h:outputStylesheet library="css" name="styles.css"></h:outputStylesheet>
+<h:outputLink library="img"></h:outputLink>
+</h:head> 
+<h:body> 
+
+
+
+    <ui:insert name="header">
+    	Header area.  See comments below this line in the source.
+    	<!--  include your header file or uncomment the include below and create header.xhtml in this directory -->
+    	<ui:include src="header.xhtml"/> 
+    </ui:insert>
+
+  <ui:insert name="content">
+    	
+    	<!--  include your content file or uncomment the include below and create content.xhtml in this directory -->
+	  	<!-- <div> -->
+    	<!-- <ui:include src="content.xhtml"/> -->  
+    	<!-- </div> -->
+  </ui:insert>
+
+  <ui:insert name="footer">
+  
+    	<!--  include your header file or uncomment the include below and create footer.xhtml in this directory -->
+		<ui:include src="footer.xhtml"/> 
+  </ui:insert>
+
+
+</h:body>
+
+</html>
