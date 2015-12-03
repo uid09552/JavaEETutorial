@@ -1,0 +1,28 @@
+<ui:composition template="/template.xhtml"
+ xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+	<ui:define name="content">
+	
+		<h:form id="signinForm" prependId="false">
+		<h:messages for="signinForm"></h:messages>
+		<h:panelGrid columns="3" >
+			<h:outputLabel value="#{msg['email']}:"></h:outputLabel>
+			<h:inputText id="email" value="#{signinController.email}"></h:inputText>
+			<h:message for="email"/>
+			
+			<h:outputLabel value="#{msg['kennwort']}:"></h:outputLabel>
+			<h:inputSecret id="password" value="#{signinController.password}"></h:inputSecret> 
+			<h:message  for="password"/>
+			
+			<h:commandButton id="signin" action="#{signinController.find}" value="#{msg['signin']}"></h:commandButton>
+			<h:commandButton id="cancel" action="index" value="#{msg['cancel']}"></h:commandButton>
+			<h:message for="signin"/>
+			
+		</h:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+
