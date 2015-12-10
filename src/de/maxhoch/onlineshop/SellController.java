@@ -10,17 +10,14 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.HeuristicMixedException;
-import javax.transaction.HeuristicRollbackException;
-import javax.transaction.NotSupportedException;
-import javax.transaction.RollbackException;
+
 import javax.transaction.SystemException;
 import javax.transaction.UserTransaction;
 
 import org.jboss.logging.Logger;
 import org.jboss.logging.Logger.Level;
 
-import com.sun.prism.impl.BaseMesh.FaceMembers;
+
 
 import de.maxhoch.model.Customer;
 import de.maxhoch.model.Item;
