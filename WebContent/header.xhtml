@@ -28,6 +28,9 @@
 <h:link outcome="signin" value="#{msg['signin']}">
 
 </h:link>
+<h:link rendered="#{not empty signinController.customer.email}" outcome="sell" value="#{msg['sell']}">
+
+</h:link>
 </nav>
 </header>
 

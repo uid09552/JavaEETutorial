@@ -1,0 +1,32 @@
+<ui:composition template="/template.xhtml"
+ xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+	<ui:define name="content">
+	
+		<h:form id="sellForm" prependId="false">
+		<h:messages for="sellForm"></h:messages>
+		<h:panelGrid columns="3" >
+			<h:outputLabel value="#{msg['item.title']}:"></h:outputLabel>
+			<h:inputText id="title" value="#{sellController.item.title}"></h:inputText>
+			<h:message for="title"/>
+			
+			<h:outputLabel value="#{msg['item.description']}:"></h:outputLabel>
+			<h:inputText id="description" value="#{sellController.item.description}"></h:inputText>
+			<h:message for="description"/>
+		
+			<h:outputLabel value="#{msg['item.price']}:"></h:outputLabel>
+			<h:inputText id="price" value="#{sellController.item.price}"></h:inputText>
+			<h:message for="price"/>
+			
+			<h:commandButton id="sell" action="#{sellController.persist(signinController)}" value="#{msg['sell']}"></h:commandButton>
+			<h:commandButton id="cancel" action="index" value="#{msg['cancel']}"></h:commandButton>
+			<h:message for="sell"/>
+			
+		</h:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+
